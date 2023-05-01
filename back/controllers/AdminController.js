@@ -49,7 +49,7 @@ const login_admin = async function(req,res){
         bcrypt.compare(data.password, user.password, async function(error, check) {
             if (check) {
                 //login
-                //si esta bien el pass manda data
+                //si esta bien el password manda data
                 res.status(200).send({
                     data:user,
                     token: jwt.createToken(user)
